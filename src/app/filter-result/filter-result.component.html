@@ -1,3 +1,15 @@
-<div *ngFor="let country of countries">
-    {{ country.name.common }}
+<div *ngIf="countries.length > 10">
+    To many matches, specify another filter
 </div>
+
+<div *ngIf="countries.length > 2 && countries.length < 10">
+    <div *ngFor="let country of countries">
+        {{ country.name.common }}
+    </div>
+</div>
+
+<div *ngIf="countries.length === 1">
+    There is one country - {{ countries[0].name.common }}
+</div>
+
+

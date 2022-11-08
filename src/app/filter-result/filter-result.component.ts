@@ -12,6 +12,11 @@ export class FilterResultComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngOnChanges(): void {
+    
   }
 
 }

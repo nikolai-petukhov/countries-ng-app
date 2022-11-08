@@ -21,6 +21,5 @@ export class AppComponent {
     this.countriesToShow = this.filterString 
       ? this.countries.filter(country => country.name.common.toLowerCase().includes(this.filterString))
       : [];
-    console.log(this.countriesToShow)
   }
 }
