@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  @Input() filterInputValue!: string;
+  @Input() filterInputValue: string = '';
   @Output() filterInputValueChange = new EventEmitter<string>();
 
   constructor() { }
@@ -18,7 +18,6 @@ export class FilterComponent implements OnInit {
   filterInputHandler(searchValue: string): void {
     this.filterInputValue = searchValue;
     this.filterInputValueChange.emit(this.filterInputValue);
-    console.log(this.filterInputValue);//
   }
 
 }

@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FilterComponent } from './filter/filter.component';
+import { FilterResultComponent } from './filter-result/filter-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilterComponent
+    FilterComponent,
+    FilterResultComponent
   ],
   imports: [
     BrowserModule

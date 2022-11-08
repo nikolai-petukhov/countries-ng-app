@@ -1,3 +1,2 @@
-<app-filter [(filterInputValue)]="filterString"></app-filter>
-
-{{filterString}}
+<app-filter [(filterInputValue)]="filterString" (filterInputValueChange)="setCountriesToShow()"></app-filter>
+<app-filter-result [countries]="countriesToShow"></app-filter-result>
