@@ -4,7 +4,7 @@
 
 <div *ngIf="countries.length > 2 && countries.length < 10">
     <div *ngFor="let country of countries">
-        {{ country.name.common }}
+        <app-filter-result-item [country]="country"></app-filter-result-item>
     </div>
 </div>
 
