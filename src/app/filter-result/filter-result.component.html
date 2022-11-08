@@ -9,7 +9,7 @@
 </div>
 
 <div *ngIf="countries.length === 1">
-    There is one country - {{ countries[0].name.common }}
+    <app-country [country]="countries[0]"></app-country>
 </div>
 
 

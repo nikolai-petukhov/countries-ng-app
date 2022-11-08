@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-country',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryComponent implements OnInit {
 
+  @Input() country: any = null;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.country)
   }
 
 }

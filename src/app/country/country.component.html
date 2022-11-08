@@ -1,1 +1,12 @@
-<p>country works!</p>
+<h2>{{ country.name.common }}</h2>
+
+<div>capital {{ country.capital[0] }} </div>
+<div>area {{ country.area }}</div>
+
+<div>
+    <h3>languages:</h3>
+    <ul *ngFor="let language of country.languages | keyvalue">
+         <li>{{ language.value }}</li>
+    </ul>
+</div>
+<img [src]="country.flags.png" [alt]="country.name.common + ' flag'" />

@@ -1,5 +1,5 @@
 {{country.name.common}}{{' '}}
 <button (click)="showCountryHandler()">{{showCountry ? 'hide' : 'show'}}</button>
 <div *ngIf="showCountry">
-    <app-country></app-country>
+    <app-country [country]="country"></app-country>
 </div>
