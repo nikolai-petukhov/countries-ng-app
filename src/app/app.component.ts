@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import axios from 'axios';
+import { CountriesService } from './services/countries.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,19 @@ import axios from 'axios';
 })
 export class AppComponent {
   filterString: string = '';
-  countries: any[] = [];
+  countries: any = [];
   countriesToShow: any[] = [];
 
+  constructor (private countriesService: CountriesService) {}
+
   ngOnInit(): void {
-    axios
-      .get('https://restcountries.com/v3.1/all')
-      .then(response => this.countries = response.data);
+    this.countriesService.getCountries()
+      .subscribe(data => this.countries = data);
   }
 
   setCountriesToShow(): void {
     this.countriesToShow = this.filterString 
-      ? this.countries.filter(country => country.name.common.toLowerCase().includes(this.filterString))
+      ? this.countries.filter((country: any) => country.name.common.toLowerCase().includes(this.filterString))
       : [];
   }
 }
