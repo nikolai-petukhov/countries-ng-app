@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { WeatherService } from '../../services/weather.service';
+
 
 @Component({
   selector: 'app-country',
@@ -10,13 +10,12 @@ import { environment } from 'src/environments/environment';
 export class CountryComponent implements OnInit {
 
   @Input() country: any = null;
-  weather: any = null;
+  weather: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.http
-      .get(`https://api.openweathermap.org/data/2.5/weather?q=${this.country.name.common}&units=metric&appid=${environment.APP_API_KEY}`)
+    this.weatherService.getWeather(this.country.name.common)
       .subscribe(data => this.weather = data);
   }
 
